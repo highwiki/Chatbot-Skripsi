@@ -61,7 +61,7 @@ st.markdown('<div class="chat-title">Chatbot Prediksi Harga Beras di Jawa Barat<
 @st.cache_resource(show_spinner=False)
 def load_model_and_data():
     # Load data dan parse tanggal seperti di skrip Colab
-    df = pd.read_csv("/content/drive/MyDrive/Database/Prediksi_Data.csv", parse_dates=["Tanggal"])
+    df = pd.read_csv("Prediksi_Data.csv", parse_dates=["Tanggal"])
 
     # !! PERUBAHAN KUNCI: Menyamakan format tanggal ke MM-DD-YYYY
     df['Tanggal'] = pd.to_datetime(df['Tanggal'], dayfirst=True).dt.strftime('%m-%d-%Y')
